@@ -138,6 +138,7 @@ public class GraphDatabase
      */
     public static Driver driver(URI uri, AuthToken authToken, Config config )
     {
+     // NOTICE: pandadb
         if (uri.getScheme().equals("panda")){
             InternalAuthToken authToken1 = (InternalAuthToken) authToken;
             return new PandaDriverFactory(uri.getAuthority(), authToken1.toMap(), PandaDriverConfig.defaultConfiguration()).newInstance();
@@ -156,6 +157,7 @@ public class GraphDatabase
             }
             return null;
         }
+     // NOTICE END
     }
 
     /**

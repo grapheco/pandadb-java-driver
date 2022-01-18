@@ -8,6 +8,13 @@
     <artifactId>pandadb-java-driver</artifactId>
     <version>0.3</version>
 
+    <licenses>
+        <license>
+            <name>Apache License, Version 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
     <dependencies>
         <dependency>
             <groupId>org.neo4j.driver</groupId>
