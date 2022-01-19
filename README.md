@@ -2,6 +2,14 @@
 
 pandadb-java-driver can easily switch to neo4j driver or pandadb driver, all the user needs to do is change the connection schema to `bolt` or `panda`.
 
+## License
+pandadb-java-driver is under the Apache 2.0 license. More detail see [LICENSE](https://github.com/grapheco/pandadb-java-driver/blob/master/LICENSE)
+
+## Building PandaDB-Java-Driver
+```
+mvn package
+```
+
 ## Usage
 ```
 import org.neo4j.driver.v1.*;
