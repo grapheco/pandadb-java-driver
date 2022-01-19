@@ -8,6 +8,11 @@
     <artifactId>pandadb-java-driver</artifactId>
     <version>0.3</version>
 
+    <packaging>pom</packaging>
+    <name>PandaDB Java Driver Project</name>
+    <description>A project for building a Java driver for PandaDB</description>
+    <url>https://github.com/grapheco/pandadb-java-driver</url>
+
     <dependencies>
         <dependency>
             <groupId>org.neo4j.driver</groupId>
@@ -156,6 +161,17 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <profiles>
         <profile>
