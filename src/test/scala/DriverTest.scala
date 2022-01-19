@@ -8,12 +8,10 @@ import scala.collection.JavaConverters._
  */
 object DriverTest {
   def main(args: Array[String]): Unit = {
-    val driver = GraphDatabase.driver("panda://10.0.82.144:9989", AuthTokens.basic("pandadb", "pandadb"))
+    val driver = GraphDatabase.driver("panda://127.0.0.1:9989", AuthTokens.basic("", ""))
     val session = driver.session()
     val res = session.run("match (n) return n limit 10")
-    var count = 0
     while (res.hasNext){
-      count += 1
       val data = res.next()
       println(data.get("n").asEntity().asMap().asScala.toList)
     }
