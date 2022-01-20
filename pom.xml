@@ -19,15 +19,11 @@
             <artifactId>neo4j-java-driver</artifactId>
             <version>1.7.5</version>
         </dependency>
-        <dependency>
-            <groupId>org.grapheco</groupId>
-            <artifactId>hippo-rpc_2.12</artifactId>
-            <version>0.1.2-SNAPSHOT</version>
-        </dependency>
+
         <dependency>
             <groupId>org.grapheco.pandadb</groupId>
             <artifactId>pandadb-net</artifactId>
-            <version>0.3</version>
+            <version>0.3.1</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.scala-logging</groupId>
