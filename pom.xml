@@ -6,9 +6,8 @@
 
     <groupId>org.grapheco.pandadb</groupId>
     <artifactId>pandadb-java-driver</artifactId>
-    <version>0.3</version>
+    <version>0.3.2</version>
 
-    <packaging>pom</packaging>
     <name>PandaDB Java Driver Project</name>
     <description>A project for building a Java driver for PandaDB</description>
     <url>https://github.com/grapheco/pandadb-java-driver</url>
@@ -23,7 +22,7 @@
         <dependency>
             <groupId>org.grapheco.pandadb</groupId>
             <artifactId>pandadb-net</artifactId>
-            <version>0.3.1</version>
+            <version>0.3.3</version>
         </dependency>
         <dependency>
             <groupId>com.typesafe.scala-logging</groupId>
