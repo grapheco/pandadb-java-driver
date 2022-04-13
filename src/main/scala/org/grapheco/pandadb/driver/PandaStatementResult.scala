@@ -109,7 +109,16 @@ class PandaStatementResult(driverStreamRecords: Stream[DriverValue], cypher: Str
       override def get(s: String, v: Double): Double = throw new NotImplementMethodException("get(s: String, v: Double)")
 
       override def toString: String = {
-        String.format(s"Record<${formatPairs(asMap())}>")
+        var res:Map[String, AnyRef]= Map.empty
+        try{
+          res = asMap().asScala.toMap
+          String.format(s"Record<${formatPairs(res.asJava)}>")
+        }
+        catch {
+          case e: Exception => {
+            res.toString()
+          }
+        }
       }
     }
   }
