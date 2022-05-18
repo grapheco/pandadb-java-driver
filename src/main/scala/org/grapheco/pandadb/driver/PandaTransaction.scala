@@ -5,7 +5,6 @@ import java.util.UUID
 import java.util.concurrent.CompletionStage
 
 import org.grapheco.pandadb.driver.rpc.PandaRpcClient
-import com.typesafe.scalalogging.LazyLogging
 import org.neo4j.driver.v1.types.TypeSystem
 import org.neo4j.driver.v1.{Record, Statement, StatementResult, StatementResultCursor, Transaction, Value}
 
@@ -17,17 +16,15 @@ import scala.collection.JavaConverters._
  * @author: LiamGao
  * @create: 2021-08-25 09:14
  */
-class PandaTransaction(rpcClient: PandaRpcClient, address: String) extends Transaction with LazyLogging{
+class PandaTransaction(rpcClient: PandaRpcClient, address: String) extends Transaction{
   val uuid = UUID.randomUUID().toString
 
   override def success(): Unit = {
     val msg = rpcClient.sendTransactionCommitRequest(uuid)
-    logger.debug(msg)
   }
 
   override def failure(): Unit = {
     val msg = rpcClient.sendTransactionRollbackRequest(uuid)
-    logger.debug(msg)
   }
 
   override def close(): Unit = ???
