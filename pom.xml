@@ -6,7 +6,7 @@
 
     <groupId>org.grapheco.pandadb</groupId>
     <artifactId>pandadb-java-driver</artifactId>
-    <version>0.3.3</version>
+    <version>0.4</version>
 
     <name>PandaDB Java Driver Project</name>
     <description>A project for building a Java driver for PandaDB</description>
@@ -19,6 +19,17 @@
             <version>1.7.5</version>
         </dependency>
 
+        <dependency>
+            <groupId>net.neoremind</groupId>
+            <artifactId>kraps-rpc_2.11</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.grapheco</groupId>
+            <artifactId>hippo-rpc</artifactId>
+            <version>0.1.2</version>
+        </dependency>
         <dependency>
             <groupId>org.grapheco.pandadb</groupId>
             <artifactId>pandadb-net</artifactId>
