@@ -5,41 +5,50 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.grapheco.pandadb</groupId>
-    <artifactId>pandadb-java-driver</artifactId>
-    <version>0.3.3</version>
-
-    <name>PandaDB Java Driver Project</name>
-    <description>A project for building a Java driver for PandaDB</description>
-    <url>https://github.com/grapheco/pandadb-java-driver</url>
+    <artifactId>pandadb-client</artifactId>
+    <version>0.4</version>
 
     <dependencies>
         <dependency>
-            <groupId>org.neo4j.driver</groupId>
-            <artifactId>neo4j-java-driver</artifactId>
-            <version>1.7.5</version>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>annotations-api</artifactId>
+            <version>6.0.53</version>
         </dependency>
 
         <dependency>
-            <groupId>net.neoremind</groupId>
-            <artifactId>kraps-rpc_2.11</artifactId>
-            <version>1.0.0</version>
+            <groupId>com.github.yitter</groupId>
+            <artifactId>yitter-idgenerator</artifactId>
+            <version>1.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.19.3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-all</artifactId>
+            <version>1.33.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.grapheco</groupId>
-            <artifactId>hippo-rpc</artifactId>
-            <version>0.1.2</version>
+            <artifactId>lynx-rpc</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.grapheco.pandadb</groupId>
-            <artifactId>pandadb-net</artifactId>
-            <version>0.3.3</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-io</groupId>
-                    <artifactId>commons-io</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.grapheco</groupId>
+            <artifactId>lynx</artifactId>
+            <version>0.5</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -146,6 +155,24 @@
         </plugins>
     </build>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/jen7871/pandadb-client</url>
+        <connection>git@github.com:jen7871/pandadb-client.git</connection>
+        <developerConnection>https://github.com/jen7871</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <name>RenHao</name>
+            <email>rh@cnic.cn</email>
+        </developer>
+    </developers>
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -157,72 +184,4 @@
         </repository>
     </distributionManagement>
 
-    <profiles>
-        <profile>
-<!--            <id>release</id>-->
-            <id>snapshot</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>2.2.1</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>net.alchim31.maven</groupId>
-                        <artifactId>scala-maven-plugin</artifactId>
-                        <version>3.3.2</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>doc-jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-    <scm>
-        <url>https://github.com/grapheco/pandadb-java-driver</url>
-        <connection>git@github.com:grapheco/pandadb-java-driver.git</connection>
-        <developerConnection>https://github.com/grapheco</developerConnection>
-    </scm>
-    <developers>
-        <developer>
-            <name>LianxinGao</name>
-            <email>liamgao017@gmail.com</email>
-        </developer>
-    </developers>
 </project>
