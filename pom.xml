@@ -6,7 +6,7 @@
 
     <groupId>org.grapheco.pandadb</groupId>
     <artifactId>pandadb-java-driver</artifactId>
-    <version>0.4</version>
+    <version>0.3.3</version>
 
     <name>PandaDB Java Driver Project</name>
     <description>A project for building a Java driver for PandaDB</description>
