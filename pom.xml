@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.grapheco.pandadb</groupId>
-    <artifactId>pandadb-client</artifactId>
+    <artifactId>pandadb-java-driver</artifactId>
     <version>0.4</version>
 
     <dependencies>
@@ -169,9 +169,9 @@
         </license>
     </licenses>
     <scm>
-        <url>https://github.com/jen7871/pandadb-client</url>
-        <connection>git@github.com:jen7871/pandadb-client.git</connection>
-        <developerConnection>https://github.com/jen7871</developerConnection>
+        <url>https://github.com/grapheco/pandadb-java-driver</url>
+        <connection>git@github.com:grapheco/pandadb-java-driver.git</connection>
+        <developerConnection>https://github.com/grapheco</developerConnection>
     </scm>
     <developers>
         <developer>
