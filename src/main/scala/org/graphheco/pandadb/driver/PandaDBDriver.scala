@@ -16,7 +16,7 @@ import scala.collection.JavaConverters._
  * @Date: Created at 11:17 2022/4/2
  * @Modified By:
  */
-class PandaClient(host: String, port: Int) {
+class PandaDBDriver(host: String, port: Int) {
 
   val channel = NettyChannelBuilder.forAddress(host, port).usePlaintext().build();
   val blockingStub = PandaQueryServiceGrpc.newBlockingStub(channel)
