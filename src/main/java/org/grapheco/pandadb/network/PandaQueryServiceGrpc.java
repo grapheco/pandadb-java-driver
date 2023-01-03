@@ -1,16 +1,25 @@
 package org.grapheco.pandadb.network;
 
-import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ClientCalls.asyncUnaryCall;
 import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
+import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
+import static io.grpc.stub.ClientCalls.futureUnaryCall;
+import static io.grpc.MethodDescriptor.generateFullMethodName;
+import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
+import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
+import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.0.0)",
-    comments = "Source: query.proto")
+        value = "by gRPC proto compiler (version 1.0.0)",
+        comments = "Source: query.proto")
 public class PandaQueryServiceGrpc {
 
   private PandaQueryServiceGrpc() {}
@@ -19,14 +28,14 @@ public class PandaQueryServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static final io.grpc.MethodDescriptor<Query.QueryRequest,
-      Query.QueryResponse> METHOD_QUERY =
-      io.grpc.MethodDescriptor.create(
-          io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING,
-          generateFullMethodName(
-              "org.grapheco.pandadb.network.PandaQueryService", "Query"),
-          io.grpc.protobuf.ProtoUtils.marshaller(Query.QueryRequest.getDefaultInstance()),
-          io.grpc.protobuf.ProtoUtils.marshaller(Query.QueryResponse.getDefaultInstance()));
+  public static final io.grpc.MethodDescriptor<org.grapheco.pandadb.network.Query.QueryRequest,
+          org.grapheco.pandadb.network.Query.QueryResponse> METHOD_QUERY =
+          io.grpc.MethodDescriptor.create(
+                  io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING,
+                  generateFullMethodName(
+                          "org.grapheco.pandadb.network.PandaQueryService", "Query"),
+                  io.grpc.protobuf.ProtoUtils.marshaller(org.grapheco.pandadb.network.Query.QueryRequest.getDefaultInstance()),
+                  io.grpc.protobuf.ProtoUtils.marshaller(org.grapheco.pandadb.network.Query.QueryResponse.getDefaultInstance()));
 
   /**
    * Creates a new async stub that supports all call types for the service
@@ -39,7 +48,7 @@ public class PandaQueryServiceGrpc {
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
   public static PandaQueryServiceBlockingStub newBlockingStub(
-      io.grpc.Channel channel) {
+          io.grpc.Channel channel) {
     return new PandaQueryServiceBlockingStub(channel);
   }
 
@@ -47,7 +56,7 @@ public class PandaQueryServiceGrpc {
    * Creates a new ListenableFuture-style stub that supports unary and streaming output calls on the service
    */
   public static PandaQueryServiceFutureStub newFutureStub(
-      io.grpc.Channel channel) {
+          io.grpc.Channel channel) {
     return new PandaQueryServiceFutureStub(channel);
   }
 
@@ -57,21 +66,21 @@ public class PandaQueryServiceGrpc {
 
     /**
      */
-    public void query(Query.QueryRequest request,
-                      io.grpc.stub.StreamObserver<Query.QueryResponse> responseObserver) {
+    public void query(org.grapheco.pandadb.network.Query.QueryRequest request,
+                      io.grpc.stub.StreamObserver<org.grapheco.pandadb.network.Query.QueryResponse> responseObserver) {
       asyncUnimplementedUnaryCall(METHOD_QUERY, responseObserver);
     }
 
-    @Override public io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override public io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            METHOD_QUERY,
-            asyncServerStreamingCall(
-              new MethodHandlers<
-                Query.QueryRequest,
-                Query.QueryResponse>(
-                  this, METHODID_QUERY)))
-          .build();
+              .addMethod(
+                      METHOD_QUERY,
+                      asyncServerStreamingCall(
+                              new MethodHandlers<
+                                      org.grapheco.pandadb.network.Query.QueryRequest,
+                                      org.grapheco.pandadb.network.Query.QueryResponse>(
+                                      this, METHODID_QUERY)))
+              .build();
     }
   }
 
@@ -83,22 +92,22 @@ public class PandaQueryServiceGrpc {
     }
 
     private PandaQueryServiceStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+                                  io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected PandaQueryServiceStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+                                          io.grpc.CallOptions callOptions) {
       return new PandaQueryServiceStub(channel, callOptions);
     }
 
     /**
      */
-    public void query(Query.QueryRequest request,
-                      io.grpc.stub.StreamObserver<Query.QueryResponse> responseObserver) {
+    public void query(org.grapheco.pandadb.network.Query.QueryRequest request,
+                      io.grpc.stub.StreamObserver<org.grapheco.pandadb.network.Query.QueryResponse> responseObserver) {
       asyncServerStreamingCall(
-          getChannel().newCall(METHOD_QUERY, getCallOptions()), request, responseObserver);
+              getChannel().newCall(METHOD_QUERY, getCallOptions()), request, responseObserver);
     }
   }
 
@@ -110,22 +119,22 @@ public class PandaQueryServiceGrpc {
     }
 
     private PandaQueryServiceBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+                                          io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected PandaQueryServiceBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+                                                  io.grpc.CallOptions callOptions) {
       return new PandaQueryServiceBlockingStub(channel, callOptions);
     }
 
     /**
      */
-    public java.util.Iterator<Query.QueryResponse> query(
-        Query.QueryRequest request) {
+    public java.util.Iterator<org.grapheco.pandadb.network.Query.QueryResponse> query(
+            org.grapheco.pandadb.network.Query.QueryRequest request) {
       return blockingServerStreamingCall(
-          getChannel(), METHOD_QUERY, getCallOptions(), request);
+              getChannel(), METHOD_QUERY, getCallOptions(), request);
     }
   }
 
@@ -137,13 +146,13 @@ public class PandaQueryServiceGrpc {
     }
 
     private PandaQueryServiceFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+                                        io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
-    @Override
+    @java.lang.Override
     protected PandaQueryServiceFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+                                                io.grpc.CallOptions callOptions) {
       return new PandaQueryServiceFutureStub(channel, callOptions);
     }
   }
@@ -151,10 +160,10 @@ public class PandaQueryServiceGrpc {
   private static final int METHODID_QUERY = 0;
 
   private static class MethodHandlers<Req, Resp> implements
-      io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
-      io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
-      io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
-      io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
+          io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
+          io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
+          io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
+          io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
     private final PandaQueryServiceImplBase serviceImpl;
     private final int methodId;
 
@@ -163,23 +172,23 @@ public class PandaQueryServiceGrpc {
       this.methodId = methodId;
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_QUERY:
-          serviceImpl.query((Query.QueryRequest) request,
-              (io.grpc.stub.StreamObserver<Query.QueryResponse>) responseObserver);
+          serviceImpl.query((org.grapheco.pandadb.network.Query.QueryRequest) request,
+                  (io.grpc.stub.StreamObserver<org.grapheco.pandadb.network.Query.QueryResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
       }
     }
 
-    @Override
-    @SuppressWarnings("unchecked")
+    @java.lang.Override
+    @java.lang.SuppressWarnings("unchecked")
     public io.grpc.stub.StreamObserver<Req> invoke(
-        io.grpc.stub.StreamObserver<Resp> responseObserver) {
+            io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         default:
           throw new AssertionError();
@@ -189,7 +198,7 @@ public class PandaQueryServiceGrpc {
 
   public static io.grpc.ServiceDescriptor getServiceDescriptor() {
     return new io.grpc.ServiceDescriptor(SERVICE_NAME,
-        METHOD_QUERY);
+            METHOD_QUERY);
   }
 
 }
