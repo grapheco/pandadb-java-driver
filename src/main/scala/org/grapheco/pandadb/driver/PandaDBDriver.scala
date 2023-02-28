@@ -1,4 +1,4 @@
-package org.graphheco.pandadb.client
+package org.grapheco.pandadb.driver
 
 import io.grpc.netty.NettyChannelBuilder
 import io.grpc.netty.shaded.io.netty.buffer.ByteBuf
