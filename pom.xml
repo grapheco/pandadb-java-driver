@@ -12,7 +12,7 @@
 
     <groupId>org.grapheco.pandadb</groupId>
     <artifactId>pandadb-java-driver</artifactId>
-    <version>0.4.6</version>
+    <version>0.4.7</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -59,14 +59,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
         <dependency>
             <groupId>org.grapheco</groupId>
             <artifactId>lynx</artifactId>
             <version>0.6</version>
         </dependency>
-
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

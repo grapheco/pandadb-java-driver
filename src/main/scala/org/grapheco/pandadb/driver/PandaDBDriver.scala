@@ -1,5 +1,6 @@
 package org.grapheco.pandadb.driver
 
+import io.grpc.ManagedChannel
 import io.grpc.netty.NettyChannelBuilder
 import io.grpc.netty.shaded.io.netty.buffer.ByteBuf
 import org.grapheco.lynx.lynxrpc.{LynxByteBufFactory, LynxValueDeserializer}
@@ -18,8 +19,8 @@ import scala.collection.JavaConverters._
  */
 class PandaDBDriver(host: String, port: Int) {
 
-  val channel = NettyChannelBuilder.forAddress(host, port).usePlaintext().build();
-  val blockingStub = PandaQueryServiceGrpc.newBlockingStub(channel)
+  val channel: ManagedChannel = NettyChannelBuilder.forAddress(host, port).usePlaintext().build();
+  val blockingStub: PandaQueryServiceGrpc.PandaQueryServiceBlockingStub = PandaQueryServiceGrpc.newBlockingStub(channel)
 
   def query(stat: String): Iterator[Map[String, LynxValue]] = {
     val request: Query.QueryRequest = Query.QueryRequest.newBuilder().setStatement(stat).build()
