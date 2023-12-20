@@ -30,28 +30,25 @@
             <artifactId>annotations-api</artifactId>
             <version>6.0.53</version>
         </dependency>
-
         <dependency>
             <groupId>com.github.yitter</groupId>
             <artifactId>yitter-idgenerator</artifactId>
             <version>1.0.6</version>
         </dependency>
-
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.19.3</version>
+            <version>3.12.0</version>
         </dependency>
         <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-all</artifactId>
             <version>1.33.0</version>
         </dependency>
-
         <dependency>
             <groupId>org.grapheco</groupId>
             <artifactId>lynx-rpcplus</artifactId>
-            <version>0.1.0-SNAPSHOT-20220518</version>
+            <version>0.1.0-SNAPSHOT-202312201342</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.grapheco</groupId>

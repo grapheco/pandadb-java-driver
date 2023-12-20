@@ -27,6 +27,40 @@ public final class Query {
      */
     com.google.protobuf.ByteString
     getStatementBytes();
+
+    /**
+     * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+     */
+    int getParametersCount();
+    /**
+     * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+     */
+    boolean containsParameters(
+            java.lang.String key);
+    /**
+     * Use {@link #getParametersMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
+    getParameters();
+    /**
+     * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+     */
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
+    getParametersMap();
+    /**
+     * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+     */
+
+    com.google.protobuf.ByteString getParametersOrDefault(
+            java.lang.String key,
+            com.google.protobuf.ByteString defaultValue);
+    /**
+     * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+     */
+
+    com.google.protobuf.ByteString getParametersOrThrow(
+            java.lang.String key);
   }
   /**
    * Protobuf type {@code org.grapheco.pandadb.network.QueryRequest}
@@ -74,6 +108,18 @@ public final class Query {
               statement_ = s;
               break;
             }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                parameters_ = com.google.protobuf.MapField.newMapField(
+                        ParametersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
+                      parameters = input.readMessage(
+                      ParametersDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              parameters_.getMutableMap().put(parameters.getKey(), parameters.getValue());
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -90,6 +136,17 @@ public final class Query {
       return org.grapheco.pandadb.network.Query.internal_static_org_grapheco_pandadb_network_QueryRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+            int number) {
+      switch (number) {
+        case 2:
+          return internalGetParameters();
+        default:
+          throw new RuntimeException(
+                  "Invalid map field number: " + number);
+      }
+    }
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
     internalGetFieldAccessorTable() {
       return org.grapheco.pandadb.network.Query.internal_static_org_grapheco_pandadb_network_QueryRequest_fieldAccessorTable
@@ -97,6 +154,7 @@ public final class Query {
                       org.grapheco.pandadb.network.Query.QueryRequest.class, org.grapheco.pandadb.network.Query.QueryRequest.Builder.class);
     }
 
+    private int bitField0_;
     public static final int STATEMENT_FIELD_NUMBER = 1;
     private volatile java.lang.Object statement_;
     /**
@@ -131,6 +189,82 @@ public final class Query {
       }
     }
 
+    public static final int PARAMETERS_FIELD_NUMBER = 2;
+    private static final class ParametersDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String, com.google.protobuf.ByteString> defaultEntry =
+              com.google.protobuf.MapEntry
+                      .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
+                              org.grapheco.pandadb.network.Query.internal_static_org_grapheco_pandadb_network_QueryRequest_ParametersEntry_descriptor,
+                              com.google.protobuf.WireFormat.FieldType.STRING,
+                              "",
+                              com.google.protobuf.WireFormat.FieldType.BYTES,
+                              com.google.protobuf.ByteString.EMPTY);
+    }
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.protobuf.ByteString> parameters_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
+    internalGetParameters() {
+      if (parameters_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+                ParametersDefaultEntryHolder.defaultEntry);
+      }
+      return parameters_;
+    }
+
+    public int getParametersCount() {
+      return internalGetParameters().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+     */
+
+    public boolean containsParameters(
+            java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetParameters().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getParametersMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getParameters() {
+      return getParametersMap();
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+     */
+
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getParametersMap() {
+      return internalGetParameters().getMap();
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+     */
+
+    public com.google.protobuf.ByteString getParametersOrDefault(
+            java.lang.String key,
+            com.google.protobuf.ByteString defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
+              internalGetParameters().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+     */
+
+    public com.google.protobuf.ByteString getParametersOrThrow(
+            java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
+              internalGetParameters().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -146,6 +280,15 @@ public final class Query {
       if (!getStatementBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, statement_);
       }
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
+              : internalGetParameters().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
+                parameters = ParametersDefaultEntryHolder.defaultEntry.newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        output.writeMessage(2, parameters);
+      }
     }
 
     public int getSerializedSize() {
@@ -155,6 +298,16 @@ public final class Query {
       size = 0;
       if (!getStatementBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, statement_);
+      }
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
+              : internalGetParameters().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
+                parameters = ParametersDefaultEntryHolder.defaultEntry.newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream
+                .computeMessageSize(2, parameters);
       }
       memoizedSize = size;
       return size;
@@ -174,6 +327,8 @@ public final class Query {
       boolean result = true;
       result = result && getStatement()
               .equals(other.getStatement());
+      result = result && internalGetParameters().equals(
+              other.internalGetParameters());
       return result;
     }
 
@@ -186,6 +341,10 @@ public final class Query {
       hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + STATEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getStatement().hashCode();
+      if (!internalGetParameters().getMap().isEmpty()) {
+        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetParameters().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -280,6 +439,28 @@ public final class Query {
         return org.grapheco.pandadb.network.Query.internal_static_org_grapheco_pandadb_network_QueryRequest_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+              int number) {
+        switch (number) {
+          case 2:
+            return internalGetParameters();
+          default:
+            throw new RuntimeException(
+                    "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+              int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableParameters();
+          default:
+            throw new RuntimeException(
+                    "Invalid map field number: " + number);
+        }
+      }
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
         return org.grapheco.pandadb.network.Query.internal_static_org_grapheco_pandadb_network_QueryRequest_fieldAccessorTable
@@ -306,6 +487,7 @@ public final class Query {
         super.clear();
         statement_ = "";
 
+        internalGetMutableParameters().clear();
         return this;
       }
 
@@ -328,7 +510,12 @@ public final class Query {
 
       public org.grapheco.pandadb.network.Query.QueryRequest buildPartial() {
         org.grapheco.pandadb.network.Query.QueryRequest result = new org.grapheco.pandadb.network.Query.QueryRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.statement_ = statement_;
+        result.parameters_ = internalGetParameters();
+        result.parameters_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -374,6 +561,8 @@ public final class Query {
           statement_ = other.statement_;
           onChanged();
         }
+        internalGetMutableParameters().mergeFrom(
+                other.internalGetParameters());
         onChanged();
         return this;
       }
@@ -399,6 +588,7 @@ public final class Query {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object statement_ = "";
       /**
@@ -466,6 +656,125 @@ public final class Query {
 
         statement_ = value;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+              java.lang.String, com.google.protobuf.ByteString> parameters_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
+      internalGetParameters() {
+        if (parameters_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+                  ParametersDefaultEntryHolder.defaultEntry);
+        }
+        return parameters_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
+      internalGetMutableParameters() {
+        onChanged();;
+        if (parameters_ == null) {
+          parameters_ = com.google.protobuf.MapField.newMapField(
+                  ParametersDefaultEntryHolder.defaultEntry);
+        }
+        if (!parameters_.isMutable()) {
+          parameters_ = parameters_.copy();
+        }
+        return parameters_;
+      }
+
+      public int getParametersCount() {
+        return internalGetParameters().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+       */
+
+      public boolean containsParameters(
+              java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetParameters().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getParametersMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getParameters() {
+        return getParametersMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+       */
+
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getParametersMap() {
+        return internalGetParameters().getMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+       */
+
+      public com.google.protobuf.ByteString getParametersOrDefault(
+              java.lang.String key,
+              com.google.protobuf.ByteString defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
+                internalGetParameters().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+       */
+
+      public com.google.protobuf.ByteString getParametersOrThrow(
+              java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.google.protobuf.ByteString> map =
+                internalGetParameters().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearParameters() {
+        getMutableParameters().clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+       */
+
+      public Builder removeParameters(
+              java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        getMutableParameters().remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
+      getMutableParameters() {
+        return internalGetMutableParameters().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+       */
+      public Builder putParameters(
+              java.lang.String key,
+              com.google.protobuf.ByteString value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        getMutableParameters().put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; parameters = 2;</code>
+       */
+
+      public Builder putAllParameters(
+              java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
+        getMutableParameters().putAll(values);
         return this;
       }
       public final Builder setUnknownFields(
@@ -955,6 +1264,11 @@ public final class Query {
   com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internal_static_org_grapheco_pandadb_network_QueryRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_org_grapheco_pandadb_network_QueryRequest_ParametersEntry_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_org_grapheco_pandadb_network_QueryRequest_ParametersEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
           internal_static_org_grapheco_pandadb_network_QueryResponse_descriptor;
   private static final
   com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -969,13 +1283,16 @@ public final class Query {
   static {
     java.lang.String[] descriptorData = {
             "\n\013query.proto\022\034org.grapheco.pandadb.netw" +
-                    "ork\"!\n\014QueryRequest\022\021\n\tstatement\030\001 \001(\t\"&" +
-                    "\n\rQueryResponse\022\025\n\rresultInBytes\030\001 \001(\0142y" +
-                    "\n\021PandaQueryService\022d\n\005Query\022*.org.graph" +
-                    "eco.pandadb.network.QueryRequest\032+.org.g" +
-                    "rapheco.pandadb.network.QueryResponse\"\0000" +
-                    "\001B\036\n\034org.grapheco.pandadb.networkb\006proto" +
-                    "3"
+                    "ork\"\244\001\n\014QueryRequest\022\021\n\tstatement\030\001 \001(\t\022" +
+                    "N\n\nparameters\030\002 \003(\0132:.org.grapheco.panda" +
+                    "db.network.QueryRequest.ParametersEntry\032" +
+                    "1\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
+                    "\030\002 \001(\014:\0028\001\"&\n\rQueryResponse\022\025\n\rresultInB" +
+                    "ytes\030\001 \001(\0142y\n\021PandaQueryService\022d\n\005Query" +
+                    "\022*.org.grapheco.pandadb.network.QueryReq" +
+                    "uest\032+.org.grapheco.pandadb.network.Quer" +
+                    "yResponse\"\0000\001B\036\n\034org.grapheco.pandadb.ne",
+            "tworkb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
             new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -994,7 +1311,13 @@ public final class Query {
     internal_static_org_grapheco_pandadb_network_QueryRequest_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_org_grapheco_pandadb_network_QueryRequest_descriptor,
-            new java.lang.String[] { "Statement", });
+            new java.lang.String[] { "Statement", "Parameters", });
+    internal_static_org_grapheco_pandadb_network_QueryRequest_ParametersEntry_descriptor =
+            internal_static_org_grapheco_pandadb_network_QueryRequest_descriptor.getNestedTypes().get(0);
+    internal_static_org_grapheco_pandadb_network_QueryRequest_ParametersEntry_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_org_grapheco_pandadb_network_QueryRequest_ParametersEntry_descriptor,
+            new java.lang.String[] { "Key", "Value", });
     internal_static_org_grapheco_pandadb_network_QueryResponse_descriptor =
             getDescriptor().getMessageTypes().get(1);
     internal_static_org_grapheco_pandadb_network_QueryResponse_fieldAccessorTable = new
