@@ -48,18 +48,7 @@
         <dependency>
             <groupId>org.grapheco</groupId>
             <artifactId>lynx-rpcplus</artifactId>
-            <version>0.1.0-SNAPSHOT-202312201342</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.grapheco</groupId>
-                    <artifactId>lynx</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.grapheco</groupId>
-            <artifactId>lynx-cypherplus</artifactId>
-            <version>0.1-SNAPSHOT-202307181718</version>
+            <version>0.1.0-SNAPSHOT-20240110</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
